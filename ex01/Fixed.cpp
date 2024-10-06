@@ -17,12 +17,12 @@ Fixed::Fixed() : _fixedValue(0) {
 	return ;
 }
 
-Fixed::Fixed( const int integerValue ) {
+Fixed::Fixed( const int integerInit ) : _fixedValue(integerInit << _fractBits){
 	std::cout << "Int constructor called" << std::endl;
 	return ;
 }
 
-Fixed::Fixed( const float floatValue) : _fixedValue(0) {
+Fixed::Fixed( const float floatInit) : _fixedValue((int)roundf(floatInit * (1 << _fractBits))) {
 	std::cout << "Float constructor called" << std::endl;
 	return ;
 }
@@ -45,7 +45,7 @@ Fixed	&Fixed::operator=( Fixed const &rhs ) {
 	return (*this);
 }
 
-int	Fixed::getRawBits(void)const
+int	Fixed::getRawBits(void) const
 {
 	std::cout << "getRawBits member function called" << std::endl;
 	return (this->_fixedValue);
@@ -56,4 +56,19 @@ void	Fixed::setRawBits(int const raw)
 	std::cout << "setRawBits member function called" << std::endl;
 	this->_fixedValue = raw;
 	return ;
+}
+
+float	Fixed::toFloat( void ) const {
+	return ((float)_fixedValue / (float)(1 << _fractBits));
+}
+
+int		Fixed::toInt( void ) const {
+	return (_fixedValue >> _fractBits);
+}
+
+
+std::ostream	&operator<<(std::ostream &COUT, Fixed const &fixedValue)
+{
+	COUT << fixedValue.toFloat();
+	return (COUT);
 }
