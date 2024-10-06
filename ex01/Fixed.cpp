@@ -17,6 +17,16 @@ Fixed::Fixed() : _fixedValue(0) {
 	return ;
 }
 
+Fixed::Fixed( const int integerValue ) {
+	std::cout << "Int constructor called" << std::endl;
+	return ;
+}
+
+Fixed::Fixed( const float floatValue) : _fixedValue(0) {
+	std::cout << "Float constructor called" << std::endl;
+	return ;
+}
+
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 	return ;
