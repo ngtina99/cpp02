@@ -30,8 +30,8 @@ class	Fixed
 
 	private:
 
-	int					_value;
-	static const int	_bits = 8;
+	int					_fixedValue;
+	static const int	_fractBits = 8;
 
 };
 
