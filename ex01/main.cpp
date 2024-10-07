@@ -16,6 +16,12 @@ int main( void ) {
 Fixed a;
 Fixed const b( 10 );
 Fixed const c( 42.42f );
+//Internal Value for c=round(42.42×256)≈round(10880.32)=10880
+//Value= 
+// 256
+// 10880
+// ​
+//  =42.421875 because of cout display and round first four
 Fixed const d( b );
 a = Fixed( 1234.4321f );
 std::cout << "a is " << a << std::endl;
