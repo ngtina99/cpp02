@@ -13,33 +13,33 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() : _value(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Fixed Default constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( const int integerValue ) : _value(integerValue << _fractBits){
-	std::cout << "Int constructor called" << std::endl;
+	std::cout << "Fixed Int constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( const float floatValue ) : _value((int)roundf(floatValue * (1 << _fractBits))) {
-	std::cout << "Float constructor called" << std::endl;
+	std::cout << "Fixed Float constructor called" << std::endl;
 	return ;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Fixed Destructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( Fixed const &src ) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Fixed Copy constructor called" << std::endl;
 	*this = src;
 	return ;
 }
 
 Fixed	&Fixed::operator=( Fixed const &rhs ) {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Fixed Copy assignment operator called" << std::endl;
 	 if (this != &rhs)
 		_value = rhs._value;
 	return (*this);

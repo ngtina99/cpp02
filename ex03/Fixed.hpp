@@ -65,6 +65,6 @@ class	Fixed
 
 };
 
-std::ostream & operator<<(std::ostream &os, const Fixed &src);
+std::ostream &operator<<(std::ostream &COUT, const Fixed &src);
 
 #endif
