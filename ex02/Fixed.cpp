@@ -102,25 +102,66 @@ Fixed	Fixed::operator+(Fixed const &src ) const {
 }
 
 Fixed	Fixed::operator-(Fixed const &src ) const {
-
+	return (this->toFloat() - src.toFloat());
 }
 
 Fixed	Fixed::operator*(Fixed const &src ) const {
-
+	return (this->toFloat() * src.toFloat());
 }
 
 Fixed	Fixed::operator/(Fixed const &src ) const {
-
+	return (this->toFloat() / src.toFloat());
 }
 
 		// pre-increment Operators
-		Fixed	&operator++( void );
-		Fixed	&operator--( void );
-		// post-increment Operators
-		Fixed	operator++( int );
-		Fixed	operator--( int );
+Fixed	Fixed::&operator++( void ) {
+	this->_value++;
+	return (*this);
+}
 
-		static	Fixed &min(Fixed &first, Fixed &second);
-		static const Fixed &min(Fixed const &first, Fixed const &second);
-		static Fixed &max(Fixed &first, Fixed &second);
-		static const Fixed &max(Fixed const &first, const Fixed &second);
+Fixed	Fixed::&operator--( void ) {
+	this->_value--;
+	return (*this);
+}
+//++(++obj);  // Modifies 'obj' twice, since both increments are applied to the original object
+
+		// post-increment Operators
+Fixed	Fixed::operator++( int ) {
+	Fixed temp = *this;
+	this->_value++;
+	return (temp);
+}
+
+Fixed	Fixed::operator--( int ) {
+	Fixed temp = *this;
+	this->_value--;
+	return (temp);
+}
+
+static	Fixed &min(Fixed &nbr1, Fixed &nbr2) {
+	if (nbr1.toFloat() <= nbr2.toFloat())
+		return (nbr1);
+	else
+		return (nbr2);
+}
+
+static const Fixed &min(Fixed const &nbr1, Fixed const &nbr2) {
+	if (nbr1.toFloat() >= nbr2.toFloat())
+		return (nbr1);
+	else
+		return (nbr2);
+}
+
+static Fixed &max(Fixed &nbr1, Fixed &nbr2) {
+	if (nbr1.toFloat() >= nbr2.toFloat())
+		return (nbr1);
+	else
+		return (nbr2);
+}
+
+static const Fixed &max(Fixed const &nbr1, const Fixed &nbr2) {
+	if (nbr1.toFloat() >= nbr2.toFloat())
+		return (nbr1);
+	else
+		return (nbr2);
+}
