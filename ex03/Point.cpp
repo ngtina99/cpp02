@@ -41,3 +41,19 @@ Point::~Point() {
 	return ;
 }
 
+const Fixed	&Point::getValueX()const
+{
+	return (this->_x);
+}
+
+const Fixed	&Point::getValueY()const
+{
+	return (this->_y);
+}
+
+
+std::ostream	&operator<<(std::ostream &o, Point const point)
+{
+	o << "_x: " << point.getX() << " / _y: " << point.getY() << std::endl;
+	return (o);
+}
