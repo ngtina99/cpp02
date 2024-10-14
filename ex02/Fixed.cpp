@@ -115,12 +115,12 @@ Fixed	Fixed::operator/(Fixed const &src ) const {
 
 		// pre-increment Operators
 Fixed	&Fixed::operator++( void ) {
-	this->_value++;
+	++this->_value;
 	return (*this);
 }
 
 Fixed	&Fixed::operator--( void ) {
-	this->_value--;
+	--this->_value;
 	return (*this);
 }
 //++(++obj);  // Modifies 'obj' twice, since both increments are applied to the original object
@@ -128,13 +128,13 @@ Fixed	&Fixed::operator--( void ) {
 		// post-increment Operators
 Fixed	Fixed::operator++( int ) {
 	Fixed temp = *this;
-	this->_value++;
+	++this->_value;
 	return (temp);
 }
 
 Fixed	Fixed::operator--( int ) {
 	Fixed temp = *this;
-	this->_value--;
+	--this->_value;
 	return (temp);
 }
 
