@@ -40,4 +40,3 @@ Point::~Point() {
 	std::cout << "Point Destructor called" << std::endl;
 	return ;
 }
-
