@@ -146,7 +146,7 @@ Fixed	&Fixed::min(Fixed &nbr1, Fixed &nbr2) {
 }
 
 const Fixed	&Fixed::min(Fixed const &nbr1, Fixed const &nbr2) {
-	if (nbr1.toFloat() >= nbr2.toFloat())
+	if (nbr1.toFloat() <= nbr2.toFloat())
 		return (nbr1);
 	else
 		return (nbr2);

@@ -13,29 +13,27 @@
 #include "Fixed.hpp"
 
 Fixed::Fixed() : _value(0) {
-	std::cout << "Fixed Default constructor called" << std::endl;
+	//std::cout << "Fixed Default constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( const int integerValue ) : _value(integerValue << _fractBits){
-	std::cout << "Fixed Int constructor called" << std::endl;
+	//std::cout << "Fixed Int constructor called" << std::endl;
 	return ;
 }
 
 Fixed::Fixed( const float floatValue ) : _value((int)roundf(floatValue * (1 << _fractBits))) {
-	std::cout << "Fixed Float constructor called" << std::endl;
+	//std::cout << "Fixed Float constructor called" << std::endl;
 	return ;
 }
 
 Fixed::~Fixed() {
-	std::cout << "Fixed Destructor called" << std::endl;
+	//std::cout << "Fixed Destructor called" << std::endl;
 	return ;
 }
 
-Fixed::Fixed( Fixed const &src ) {
-	std::cout << "Fixed Copy constructor called" << std::endl;
-	*this = src;
-	return ;
+Fixed::Fixed(Fixed const &src) : _value(src._value) {
+   // std::cout << "Fixed Copy constructor called" << std::endl;
 }
 
 Fixed	&Fixed::operator=( Fixed const &rhs ) {
@@ -145,11 +143,11 @@ Fixed	&Fixed::min(Fixed &nbr1, Fixed &nbr2) {
 		return (nbr2);
 }
 
-const Fixed	&Fixed::min(Fixed const &nbr1, Fixed const &nbr2) {
-	if (nbr1.toFloat() >= nbr2.toFloat())
-		return (nbr1);
-	else
-		return (nbr2);
+const Fixed &Fixed::min(Fixed const &nbr1, Fixed const &nbr2) {
+    if (nbr1.toFloat() <= nbr2.toFloat())
+        return (nbr1);
+    else
+        return (nbr2);
 }
 
 Fixed	&Fixed::max(Fixed &nbr1, Fixed &nbr2) {
