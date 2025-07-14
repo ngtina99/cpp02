@@ -2,9 +2,10 @@
 *.o
 
 # executables
-ex00/megaphone
-ex01/phonebook
-ex02/program_name
+ex00/fixed
+ex01/fixedUseful
+ex02/fixedOperators
+ex03/bsp
 
 # editor
 .vscode/
