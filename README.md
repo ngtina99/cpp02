@@ -56,7 +56,7 @@ Use the Fixed class in geometric computations to check if a point is inside a tr
 
 
 ## 💼 Connect
-If you have any questions or suggestions, feel free to connect: 🔗 [LinkedIn: Valentina Nguyen](https://www.linkedin.com/in/valentina-nguyen-tina/) 🙋‍♀️
+If you have any questions or suggestions, feel free to connect: 🔗 [LinkedIn: Valentina Nguyen](https://www.linkedin.com/in/valentina-nguyen-t/) 🙋‍♀️
 
 ## 🖥️ System Compatibility
 This project was developed and tested on Linux (Ubuntu).
